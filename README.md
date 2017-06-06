@@ -8,7 +8,7 @@ npm install pdfjs-dist
 
 ## Installation
 ```
-npm install saissaken/ng-pdf
+npm install ng-pdf
 ```
 
 ## Usage
