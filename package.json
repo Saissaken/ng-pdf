@@ -2,7 +2,7 @@
   "name": "ng-pdf",
   "version": "1.0.0",
   "description": "AngularJS component to display PDF files using PDF.js",
-  "main": "index.js",
+  "main": "ngpdf.js",
   "scripts": {
     "build:prod": "WEBPACK_ENV=prod webpack -p --progress --colors",
     "build:dev": "WEBPACK_ENV=dev webpack --progress --colors",
