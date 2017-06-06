@@ -17,6 +17,8 @@ npm install ng-pdf
 ```
 ## Example
 [Code](https://github.com/Saissaken/ng-pdf/tree/master/build)
+[Example](https://saissaken.github.io/ng-pdf/build)
+
 
 ## TODO
 - [ ] Add worker
