@@ -15,6 +15,8 @@ npm install saissaken/ng-pdf
 ```html
 <ng-pdf url="http://example.com/test.pdf"></ng-pdf>
 ```
+## Example
+[Code](https://github.com/Saissaken/ng-pdf/tree/master/build)
 
 ## TODO
 - [ ] Add worker
