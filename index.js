@@ -33,11 +33,20 @@ export default angular
                 .ng-pdf-button {
                     background-color: transparent;
                     border: none;
-                    color: #fff;
+                    color: rgba(255, 255, 255, 0.8);
                     font-size: 1.5em;
                     outline: none;
                     cursor: pointer;
                     line-height: 45px;
+                }
+                
+                .ng-pdf-button:hover {
+                    color: rgba(255, 255, 255, 1);
+                }
+
+                .ng-pdf-button:disabled {
+                    color: rgba(255, 255, 255, 0.1);
+                    cursor: not-allowed;
                 }
 
                 .ng-pdf-button-right {
@@ -74,6 +83,9 @@ export default angular
                 <canvas class="ng-pdf-page" ng-show="!$ctrl.loading"></canvas>
             </div>
         `,
+        bindings: {
+            url: '@',
+        },
         controller: function ($element, $timeout) {
             const $ctrl = this;
             let canvas = null;
@@ -135,7 +147,7 @@ export default angular
                 $ctrl.loading = true;
                 $ctrl.page = 0;
                 canvas = $element.find("canvas")[0];
-                getPDF("sample.pdf").then(pdf => {
+                getPDF($ctrl.url).then(pdf => {
                     $timeout(() => {
                         $ctrl.pdf = pdf;
                         $ctrl.changePage(1);

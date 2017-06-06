@@ -21,8 +21,9 @@
         var myApp = angular.module('myApp', ['ngPdf']);
 
         myApp.component('test', {
-            template: '<ng-pdf></ng-pdf>',
+            template: '<ng-pdf url="{{$ctrl.url}}"></ng-pdf>',
             controller: function() {
+                this.url = "sample.pdf";
                 console.log("This is an example");
             }
         });
