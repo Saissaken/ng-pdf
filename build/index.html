@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ng-pdf demo</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body ng-app="myApp">
+    <test></test>
+    <script src="https://cdn.rawgit.com/mozilla/pdfjs-dist/master/build/pdf.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="ngpdf.js"></script>
+    <script>
+        var myApp = angular.module('myApp', ['ngPdf']);
+
+        myApp.component('test', {
+            template: '<ng-pdf></ng-pdf>',
+            controller: function() {
+                console.log("This is an example");
+            }
+        });
+    </script>
+</body>
+</html>
