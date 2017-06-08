@@ -14,6 +14,10 @@ export default angular
                     padding: 60px 5px 5px 5px;
                     text-align: center;
                     position: relative;
+                    height: 100%;
+                    width: 100%;
+                    box-sizing: border-box;
+                    overflow-y: scroll;
                 }
 
                 .ng-pdf-header {
@@ -21,13 +25,13 @@ export default angular
                     top: 0;
                     left: 0;
                     height: 50px;
-                    line-height: 50px;                
+                    line-height: 50px;
                     width: 100%;
                     background-color: rgb(50, 54, 57);
                     color: rgb(241, 241, 241);
                     font-size: 0.9em;
                     font-family: Helvetica;
-                    box-shadow: 0px 0px 10px #000;                
+                    box-shadow: 0px 0px 10px #000;
                 }
 
                 .ng-pdf-button {
@@ -71,10 +75,9 @@ export default angular
                         ng-disabled="$ctrl.loading || $ctrl.page == 1">
                         &#9668;
                     </button>
-                    <span ng-if="!$ctrl.loading">{{$ctrl.page}} / {{$ctrl.pdf.numPages}}</span>
-                    <span ng-if="$ctrl.loading">Loading</span>                
+                    <span>{{$ctrl.page || 0}} / {{$ctrl.pdf.numPages || 0}}</span>
                     <button
-                        class="ng-pdf-button ng-pdf-button-right"                
+                        class="ng-pdf-button ng-pdf-button-right"
                         ng-click="$ctrl.changePage($ctrl.page + 1)"
                         ng-disabled="$ctrl.loading || $ctrl.page == $ctrl.pdf.numPages">
                         &#9658;
@@ -141,9 +144,9 @@ export default angular
                 if (!pdfjs) {
                     console.error("[ngPdf] PDF.js is not loaded");
                     return;
-                }             
+                }
 
-                pdfjs.disableWorker = true;
+                // pdfjs.disableWorker = true;
                 $ctrl.loading = true;
                 $ctrl.page = 0;
                 canvas = $element.find("canvas")[0];
