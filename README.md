@@ -26,3 +26,5 @@ npm install ng-pdf
 ## TODO
 - [ ] Add worker
 - [ ] Add configuration options
+
+![Tracker](https://us-central1-tracker-b14a5.cloudfunctions.net/collect)
