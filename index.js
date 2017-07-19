@@ -88,6 +88,7 @@ export default angular
         `,
         bindings: {
             url: '@',
+            workerUrl: '@'            
         },
         controller: function ($element, $timeout) {
             const $ctrl = this;
@@ -144,6 +145,12 @@ export default angular
                 if (!pdfjs) {
                     console.error("[ngPdf] PDF.js is not loaded");
                     return;
+                }
+
+                if(!$ctrl.workerUrl) {
+                    console.log("[ngPdf] Worker url not defined, using default");
+                } else {
+                    pdfjs.workerSrc = $ctrl.workerUrl;
                 }
 
                 // pdfjs.disableWorker = true;
