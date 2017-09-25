@@ -43,7 +43,7 @@ export default angular
                     cursor: pointer;
                     line-height: 45px;
                 }
-                
+
                 .ng-pdf-button:hover {
                     color: rgba(255, 255, 255, 1);
                 }
@@ -88,9 +88,9 @@ export default angular
         `,
         bindings: {
             url: '@',
-            workerUrl: '@'            
+            workerUrl: '@'
         },
-        controller: function ($element, $timeout) {
+        controller: [ '$element', '$timeout', function ($element, $timeout) {
             const $ctrl = this;
             let canvas = null;
 
@@ -164,6 +164,6 @@ export default angular
                     });
                 });
             }
-        }
+        }]
     })
     .name;;

@@ -13,7 +13,13 @@
     "type": "git",
     "url": "git+https://github.com/Saissaken/ng-pdf.git"
   },
-  "keywords": ["angular", "pdf", "pdfjs", "ngpdf", "component"],
+  "keywords": [
+    "angular",
+    "pdf",
+    "pdfjs",
+    "ngpdf",
+    "component"
+  ],
   "author": "saissaken",
   "license": "MIT",
   "bugs": {
